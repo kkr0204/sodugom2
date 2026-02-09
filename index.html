@@ -1,14 +1,100 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupid's Corner - Find Your Match</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">Cupid's Corner</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#featured-members">Members</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="login-btn">Log In</button>
+                <button class="signup-btn">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Find Your Perfect Match</h1>
+                <p>Join the most exclusive dating site and start your love story today.</p>
+                <button class="cta-btn">Join Now for Free</button>
+            </div>
+        </section>
+
+        <section id="featured-members" class="featured-members">
+            <h2>Featured Members</h2>
+            <div class="members-container">
+                <!-- Member profiles will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <i class="fas fa-user-plus"></i>
+                    <h3>Create Your Profile</h3>
+                    <p>Sign up and create a detailed profile to attract like-minded people.</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-search"></i>
+                    <h3>Find Matches</h3>
+                    <p>Use our advanced search filters to find members who match your criteria.</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-comments"></i>
+                    <h3>Start Chatting</h3>
+                    <p>Connect with your matches through our secure messaging system.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <h2>What Our Members Say</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User 1">
+                    <p>"I found the love of my life on Cupid's Corner! The platform is so easy to use and I met so many amazing people."</p>
+                    <h4>- Jessica S.</h4>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User 2">
+                    <p>"I was skeptical about online dating, but Cupid's Corner changed my mind. I'm now in a happy relationship."</p>
+                    <h4>- Mark T.</h4>
+                </div>
+                 <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User 3">
+                    <p>"A great platform to meet new people. I've made some great friends and had some wonderful dates."</p>
+                    <h4>- Emily R.</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Cupid's Corner. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="main.js" type="module"></script>
 </body>
 </html>
