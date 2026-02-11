@@ -86,17 +86,19 @@ const members = [
 ];
 
 const membersContainer = document.querySelector('.members-container');
+if (membersContainer) {
+    members.forEach(member => {
+        const memberCard = document.createElement('member-card');
+        memberCard.setAttribute('name', member.name);
+        memberCard.setAttribute('age', member.age);
+        memberCard.setAttribute('bio', member.bio);
+        memberCard.setAttribute('image', member.image);
+        membersContainer.appendChild(memberCard);
+    });
+}
 
-members.forEach(member => {
-    const memberCard = document.createElement('member-card');
-    memberCard.setAttribute('name', member.name);
-    memberCard.setAttribute('age', member.age);
-    memberCard.setAttribute('bio', member.bio);
-    memberCard.setAttribute('image', member.image);
-    membersContainer.appendChild(memberCard);
-});
 
-// Theme switching logic
+// Theme switching logic (existing)
 const themeToggleButton = document.getElementById('theme-toggle');
 const currentTheme = localStorage.getItem('theme');
 
@@ -121,3 +123,54 @@ themeToggleButton.addEventListener('click', () => {
         localStorage.setItem('theme', 'dark');
     }
 });
+
+
+// --- Site-wide Authentication Logic ---
+const loginButton = document.querySelector('.login-btn');
+const signupButton = document.querySelector('.signup-btn');
+const authButtonsDiv = document.querySelector('.auth-buttons');
+const navLinks = document.querySelector('.nav-links');
+
+const updateAuthUI = () => {
+    const token = localStorage.getItem('accessToken');
+    if (token) {
+        // User is logged in
+        loginButton.textContent = 'Logout';
+        signupButton.style.display = 'none'; // Hide Sign Up
+        // Optionally, show user-specific links or a profile link
+    } else {
+        // User is logged out
+        loginButton.textContent = 'Login';
+        signupButton.style.display = 'block'; // Show Sign Up
+    }
+};
+
+// Handle Login/Logout button click
+if (loginButton) {
+    loginButton.addEventListener('click', async () => {
+        const token = localStorage.getItem('accessToken');
+        if (token) {
+            // If logged in, perform logout
+            localStorage.removeItem('accessToken');
+            alert('Logged out successfully!');
+            updateAuthUI();
+            // Redirect to home or refresh page if needed
+            window.location.href = 'index.html';
+        } else {
+            // If logged out, prompt for login or redirect to login page
+            // For simplicity, we'll alert and expect the user to go to chat.html to login
+            alert('Please go to the Chat Room page to log in or register.');
+            // Or redirect: window.location.href = 'chat.html';
+        }
+    });
+}
+
+if (signupButton) {
+    signupButton.addEventListener('click', () => {
+        alert('Please go to the Chat Room page to register.');
+        // Or redirect: window.location.href = 'chat.html';
+    });
+}
+
+// Initial update of auth UI on page load
+updateAuthUI();

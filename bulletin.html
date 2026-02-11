@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulletin Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">Cupid's Corner</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#featured-members">Members</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="bulletin.html">Bulletin Board</a></li>
+                <li><a href="chat.html">Chat Room</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="login-btn">Log In</button>
+                <button class="signup-btn">Sign Up</button>
+            </div>
+            <div class="theme-switch">
+                <button id="theme-toggle">Toggle Theme</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Bulletin Board</h1>
+
+        <section id="create-post">
+            <h2>Create New Post</h2>
+            <form id="post-form">
+                <input type="text" id="post-title" placeholder="Title" required>
+                <textarea id="post-content" placeholder="Content" required></textarea>
+                <input type="text" id="post-category" placeholder="Category (Optional)">
+                <button type="submit">Submit Post</button>
+            </form>
+        </section>
+
+        <section id="posts-list">
+            <h2>Recent Posts</h2>
+            <div id="posts-container">
+                <!-- Posts will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js" type="module"></script>
+    <script src="bulletin.js" type="module"></script>
+</body>
+</html>
