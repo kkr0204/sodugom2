@@ -5,6 +5,22 @@
     --background-color: #fce4ec;
     --text-color: #333;
     --white: #fff;
+    --header-bg: var(--white);
+    --card-bg: var(--white);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --testimonial-text: #666;
+}
+
+[data-theme="dark"] {
+    --primary-color: #e91e63;
+    --secondary-color: #f06292;
+    --background-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --white: #2e2e4a; /* Darker white for contrast in dark mode */
+    --header-bg: #2e2e4a;
+    --card-bg: #3a3a5a;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --testimonial-text: #bdbdbd;
 }
 
 body {
@@ -12,11 +28,12 @@ body {
     margin: 0;
     background-color: var(--background-color);
     color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
-    background-color: var(--white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--header-bg);
+    box-shadow: 0 2px 4px var(--shadow-color);
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
@@ -72,6 +89,22 @@ nav {
     color: var(--white);
 }
 
+.theme-switch button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-switch button:hover {
+    background-color: var(--secondary-color);
+}
+
 .hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
@@ -84,7 +117,7 @@ nav {
 .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px var(--shadow-color);
 }
 
 .hero-content p {
@@ -129,7 +162,7 @@ nav {
 
 /* How It Works Section */
 .how-it-works {
-    background-color: var(--white);
+    background-color: var(--header-bg);
 }
 
 .steps-container {
@@ -163,12 +196,12 @@ nav {
 }
 
 .testimonial-card {
-    background-color: var(--white);
+    background-color: var(--card-bg);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--shadow-color);
     padding: 2rem;
     max-width: 320px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testimonial-card:hover {
@@ -186,7 +219,7 @@ nav {
 
 .testimonial-card p {
     font-style: italic;
-    color: #666;
+    color: var(--testimonial-text);
     margin-bottom: 1rem;
 }
 
@@ -225,3 +258,4 @@ footer {
         font-size: 2.5rem;
     }
 }
+
